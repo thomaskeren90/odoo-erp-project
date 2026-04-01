@@ -24,8 +24,28 @@ Build a multi-company ERP system using Odoo Community Edition 16.
 - **Deployment:** Docker (pending confirmation, defaulting to this)
 - **GitHub:** https://github.com/thomaskeren90/odoo-erp-project
 
+## Switching Laptops
+
+Everything is in GitHub. To move to a new laptop:
+
+### On Old Laptop
+```bash
+./backup.sh backup
+# Copy the .tar.gz file to new laptop (USB, Google Drive, etc.)
+```
+
+### On New Laptop
+```bash
+git clone https://github.com/thomaskeren90/odoo-erp-project.git
+cd odoo-erp-project
+docker-compose up -d
+# Wait 30 seconds, then:
+./backup.sh restore odoo_full_backup_TIMESTAMP.tar.gz
+```
+
+All data, settings, invoices, inventory — everything follows you.
+
 ## Decisions Pending
-- [ ] Laptop as server — accessible on local network only?
 - [ ] Need external access (domain + HTTPS)?
 
 ## Phases
