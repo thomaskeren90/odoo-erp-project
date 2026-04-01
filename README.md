@@ -50,7 +50,7 @@ All data, settings, invoices, inventory — everything follows you.
 
 ## Phases
 ### Phase 1: Core Accounting (Week 1)
-- Set up Odoo CE 16
+- Set up Odoo CE 17
 - Configure both companies
 - Chart of accounts, journals, opening balances
 - Bank statement import workflow

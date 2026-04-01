@@ -13,15 +13,15 @@ backup() {
     echo "🔄 Backing up Odoo databases..."
     
     # Backup sewing_business database
-    docker exec odoo16-db pg_dump -U odoo -Fc sewing_business > "$BACKUP_DIR/sewing_business_${TIMESTAMP}.dump"
+    docker exec odoo17-db pg_dump -U odoo -Fc sewing_business > "$BACKUP_DIR/sewing_business_${TIMESTAMP}.dump"
     echo "✅ sewing_business backed up"
     
     # Backup banking database
-    docker exec odoo16-db pg_dump -U odoo -Fc banking > "$BACKUP_DIR/banking_${TIMESTAMP}.dump"
+    docker exec odoo17-db pg_dump -U odoo -Fc banking > "$BACKUP_DIR/banking_${TIMESTAMP}.dump"
     echo "✅ banking backed up"
     
     # Backup filestore (attachments)
-    docker cp odoo16:/var/lib/odoo/. "$BACKUP_DIR/filestore_${TIMESTAMP}/" 2>/dev/null
+    docker cp odoo17:/var/lib/odoo/. "$BACKUP_DIR/filestore_${TIMESTAMP}/" 2>/dev/null
     echo "✅ filestore backed up"
     
     # Create a single archive
@@ -51,23 +51,23 @@ restore() {
     
     # Restore databases
     echo "📦 Restoring sewing_business database..."
-    docker exec -i odoo16-db pg_restore -U odoo -d sewing_business --clean --if-exists \
+    docker exec -i odoo17-db pg_restore -U odoo -d sewing_business --clean --if-exists \
         < "$RESTORE_DIR"/*/sewing_business_*.dump 2>/dev/null || \
-    docker exec -i odoo16-db pg_restore -U odoo -d sewing_business --clean --if-exists \
+    docker exec -i odoo17-db pg_restore -U odoo -d sewing_business --clean --if-exists \
         < "$RESTORE_DIR"/sewing_business_*.dump 2>/dev/null
     echo "✅ sewing_business restored"
     
     echo "📦 Restoring banking database..."
-    docker exec -i odoo16-db pg_restore -U odoo -d banking --clean --if-exists \
+    docker exec -i odoo17-db pg_restore -U odoo -d banking --clean --if-exists \
         < "$RESTORE_DIR"/*/banking_*.dump 2>/dev/null || \
-    docker exec -i odoo16-db pg_restore -U odoo -d banking --clean --if-exists \
+    docker exec -i odoo17-db pg_restore -U odoo -d banking --clean --if-exists \
         < "$RESTORE_DIR"/banking_*.dump 2>/dev/null
     echo "✅ banking restored"
     
     # Restore filestore
     if [ -d "$RESTORE_DIR/filestore_"* ] || [ -d "$RESTORE_DIR"/*/filestore_* ]; then
-        docker cp "$RESTORE_DIR"/filestore_*/. odoo16:/var/lib/odoo/ 2>/dev/null || \
-        docker cp "$RESTORE_DIR"/*/filestore_*/. odoo16:/var/lib/odoo/ 2>/dev/null
+        docker cp "$RESTORE_DIR"/filestore_*/. odoo17:/var/lib/odoo/ 2>/dev/null || \
+        docker cp "$RESTORE_DIR"/*/filestore_*/. odoo17:/var/lib/odoo/ 2>/dev/null
         echo "✅ filestore restored"
     fi
     

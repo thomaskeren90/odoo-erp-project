@@ -4,7 +4,7 @@
 
 ### User's Questions & Our Discussion
 
-**Q1: Can Odoo CE 16 do warehouse + barcode + BigSeller?**
+**Q1: Can Odoo CE 17 do warehouse + barcode + BigSeller?**
 - Warehouse: ✅ Full support (multi-warehouse, locations, lot/serial tracking)
 - Barcode: ⚠️ CE doesn't have native barcode app (Enterprise only). Workarounds: keyboard wedge scanners, OCA community modules, or custom module
 - BigSeller: ⚠️ No native connector. Need custom API bridge service (1-2 weeks work)
@@ -24,7 +24,7 @@
   - Conversation history preserved
 
 ### Key Takeaways
-- Odoo CE 16 covers ~80% of needs out of the box
+- Odoo CE 17 covers ~80% of needs out of the box
 - BigSeller integration is the biggest custom work item
 - Barcode in CE needs workaround or custom module
 - Multi-company accounting is a core Odoo strength
