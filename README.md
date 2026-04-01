@@ -17,13 +17,16 @@ Build a multi-company ERP system using Odoo Community Edition 16.
 - BigSeller integration (orders, stock sync)
 - Financial reports (P&L, Balance Sheet, Cash Flow, Trial Balance)
 
+## Decisions Made
+- **Country:** Indonesia
+- **Currency:** IDR (Indonesian Rupiah)
+- **Books:** Fresh start (no migration needed)
+- **Deployment:** Docker (pending confirmation, defaulting to this)
+- **GitHub:** https://github.com/thomaskeren90/odoo-erp-project
+
 ## Decisions Pending
-- [ ] Country (affects chart of accounts, tax/GST setup)
-- [ ] Currency (MYR? SGD? Multi-currency?)
-- [ ] Existing books to migrate or fresh start?
-- [ ] Deployment: Docker or bare metal on laptop?
-- [ ] Domain + HTTPS or localhost?
-- [ ] GitHub repo URL for saving progress
+- [ ] Laptop as server — accessible on local network only?
+- [ ] Need external access (domain + HTTPS)?
 
 ## Phases
 ### Phase 1: Core Accounting (Week 1)
