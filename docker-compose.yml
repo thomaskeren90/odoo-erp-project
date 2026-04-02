@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   odoo:
-    image: odoo:17.0
-    container_name: odoo17
+    image: odoo:16.0
+    container_name: odoo16
     depends_on:
       - db
     ports:
@@ -20,7 +20,7 @@ services:
 
   db:
     image: postgres:15
-    container_name: odoo17-db
+    container_name: odoo16-db
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo

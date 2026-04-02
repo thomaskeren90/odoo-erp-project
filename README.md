@@ -45,12 +45,44 @@ docker-compose up -d
 
 All data, settings, invoices, inventory — everything follows you.
 
+
+## Chart of Accounts
+
+Custom module: `addons/custom_coa/`
+
+### Banks (1110xx)
+- 111001 - Bank BCA
+- 111002 - Bank Mandiri
+- 111003 - Bank BNI
+- 111004 - Bank BRI
+- 111005 - Bank CIMB Niaga
+
+### Inventory (1120xx)
+- 112001 - Persediaan Barang
+
+### Sales (4100xx)
+- 410001 - Pendapatan Penjualan Produk
+- 410002 - Pendapatan Jasa
+
+### Purchase/COGS (5100xx)
+- 510001 - Harga Pokok Penjualan
+- 510002 - Pembelian Barang
+
+### Expenses - Toko (6110xx)
+- 611001-611004 - Sewa, Listrik, Operasional, Gaji
+
+### Expenses - Pribadi (6120xx)
+- 612001-612003 - Hidup, Transportasi, Lainnya
+
+### Expenses - Kos (6130xx)
+- 613001-613004 - Sewa, Listrik, Air, Perawatan
+
 ## Decisions Pending
 - [ ] Need external access (domain + HTTPS)?
 
 ## Phases
 ### Phase 1: Core Accounting (Week 1)
-- Set up Odoo CE 17
+- Set up Odoo CE 16
 - Configure both companies
 - Chart of accounts, journals, opening balances
 - Bank statement import workflow

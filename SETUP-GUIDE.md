@@ -1,4 +1,4 @@
-# Odoo CE 17 Setup Guide
+# Odoo CE 16 Setup Guide
 
 ## Quick Start
 

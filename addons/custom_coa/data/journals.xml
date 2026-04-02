@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="journal_bank_bca" model="account.journal">
+            <field name="name">Bank BCA</field><field name="code">BCA</field>
+            <field name="type">bank</field>
+            <field name="default_account_id" ref="custom_coa.acc_bank_bca"/>
+        </record>
+        <record id="journal_bank_mandiri" model="account.journal">
+            <field name="name">Bank Mandiri</field><field name="code">MANDIRI</field>
+            <field name="type">bank</field>
+            <field name="default_account_id" ref="custom_coa.acc_bank_mandiri"/>
+        </record>
+        <record id="journal_bank_bni" model="account.journal">
+            <field name="name">Bank BNI</field><field name="code">BNI</field>
+            <field name="type">bank</field>
+            <field name="default_account_id" ref="custom_coa.acc_bank_bni"/>
+        </record>
+        <record id="journal_bank_bri" model="account.journal">
+            <field name="name">Bank BRI</field><field name="code">BRI</field>
+            <field name="type">bank</field>
+            <field name="default_account_id" ref="custom_coa.acc_bank_bri"/>
+        </record>
+        <record id="journal_bank_cimb" model="account.journal">
+            <field name="name">Bank CIMB Niaga</field><field name="code">CIMB</field>
+            <field name="type">bank</field>
+            <field name="default_account_id" ref="custom_coa.acc_bank_cimb"/>
+        </record>
+        <record id="journal_expense" model="account.journal">
+            <field name="name">Beban</field><field name="code">EXP</field>
+            <field name="type">general</field>
+        </record>
+    </data>
+</odoo>
