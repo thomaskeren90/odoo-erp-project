@@ -16,6 +16,7 @@ services:
       - HOST=db
       - USER=odoo
       - PASSWORD=odoo
+      - PGPASSWORD=odoo
     restart: unless-stopped
 
   db:
