@@ -26,7 +26,7 @@
    docker exec odoo13 odoo -c /etc/odoo/odoo.conf \
      --db_host=odoo13-db \
      --db_user=odoo13 \
-     --db_password=odoo13 \
+     --db_password=admin \
      -d tokoodoo13 \
      -i custom_coa \
      --stop-after-init
@@ -51,7 +51,7 @@
 docker exec odoo13 odoo -c /etc/odoo/odoo.conf \
   --db_host=odoo13-db \
   --db_user=odoo13 \
-  --db_password=odoo13 \
+  --db_password=admin \
   -d tokoodoo13 \
   -i MODULE_NAME \
   --stop-after-init
