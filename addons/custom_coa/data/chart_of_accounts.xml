@@ -1,129 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- BANKS (Asset 1110xx) -->
-        <record id="acc_bank_bca" model="account.account">
-            <field name="name">Bank BCA</field>
+        <!-- BANKS (Asset - Liquidity) -->
+
+        <!-- BCA 1 Prvt -->
+        <record id="acc_bank_bca1_prvt" model="account.account">
+            <field name="name">BCA 1 Prvt</field>
             <field name="code">111001</field>
-            <field name="account_type">asset_cash</field>
-            <field name="reconcile" eval="True"/>
-        </record>
-        <record id="acc_bank_mandiri" model="account.account">
-            <field name="name">Bank Mandiri</field>
-            <field name="code">111002</field>
-            <field name="account_type">asset_cash</field>
-            <field name="reconcile" eval="True"/>
-        </record>
-        <record id="acc_bank_bni" model="account.account">
-            <field name="name">Bank BNI</field>
-            <field name="code">111003</field>
-            <field name="account_type">asset_cash</field>
-            <field name="reconcile" eval="True"/>
-        </record>
-        <record id="acc_bank_bri" model="account.account">
-            <field name="name">Bank BRI</field>
-            <field name="code">111004</field>
-            <field name="account_type">asset_cash</field>
-            <field name="reconcile" eval="True"/>
-        </record>
-        <record id="acc_bank_cimb" model="account.account">
-            <field name="name">Bank CIMB Niaga</field>
-            <field name="code">111005</field>
-            <field name="account_type">asset_cash</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
             <field name="reconcile" eval="True"/>
         </record>
 
-        <!-- INVENTORY (Asset 1120xx) -->
+        <!-- BCA 2 Thomas Susin Chen (Toko) -->
+        <record id="acc_bank_bca2_toko" model="account.account">
+            <field name="name">BCA 2 Thomas Susin Chen (Toko)</field>
+            <field name="code">111002</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- BCA Expressi -->
+        <record id="acc_bank_bca_expressi" model="account.account">
+            <field name="name">BCA Expressi</field>
+            <field name="code">111003</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- Bank SAQU -->
+        <record id="acc_bank_saqu" model="account.account">
+            <field name="name">Bank SAQU</field>
+            <field name="code">111004</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- Superbank -->
+        <record id="acc_bank_superbank" model="account.account">
+            <field name="name">Superbank</field>
+            <field name="code">111005</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
+        <!-- INVENTORY (Current Asset) -->
         <record id="acc_inventory" model="account.account">
             <field name="name">Persediaan Barang</field>
             <field name="code">112001</field>
-            <field name="account_type">asset_current</field>
+            <field name="user_type_id" ref="account.data_account_type_current_assets"/>
             <field name="reconcile" eval="False"/>
         </record>
 
-        <!-- SALES (Income 4100xx) -->
+        <!-- SALES (Income) -->
         <record id="acc_sales_produk" model="account.account">
             <field name="name">Pendapatan Penjualan Produk</field>
             <field name="code">410001</field>
-            <field name="account_type">income</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
         </record>
         <record id="acc_sales_jasa" model="account.account">
             <field name="name">Pendapatan Jasa</field>
             <field name="code">410002</field>
-            <field name="account_type">income</field>
+            <field name="user_type_id" ref="account.data_account_type_revenue"/>
         </record>
 
-        <!-- PURCHASE / COGS (Expense 5100xx) -->
+        <!-- PURCHASE / COGS (Expense) -->
         <record id="acc_cogs" model="account.account">
             <field name="name">Harga Pokok Penjualan</field>
             <field name="code">510001</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="acc_purchase_barang" model="account.account">
             <field name="name">Pembelian Barang</field>
             <field name="code">510002</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
 
         <!-- EXPENSES - TOKO (6110xx) -->
         <record id="exp_toko_sewa" model="account.account">
             <field name="name">Beban Sewa Toko</field>
             <field name="code">611001</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_toko_listrik" model="account.account">
             <field name="name">Beban Listrik Toko</field>
             <field name="code">611002</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_toko_operasional" model="account.account">
             <field name="name">Beban Operasional Toko</field>
             <field name="code">611003</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_toko_gaji" model="account.account">
             <field name="name">Beban Gaji Karyawan Toko</field>
             <field name="code">611004</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
 
         <!-- EXPENSES - PRIBADI (6120xx) -->
         <record id="exp_pribadi_hidup" model="account.account">
             <field name="name">Beban Hidup Pribadi</field>
             <field name="code">612001</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_pribadi_transport" model="account.account">
             <field name="name">Beban Transportasi Pribadi</field>
             <field name="code">612002</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_pribadi_lainnya" model="account.account">
             <field name="name">Beban Lainnya Pribadi</field>
             <field name="code">612003</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
 
         <!-- EXPENSES - KOS (6130xx) -->
         <record id="exp_kos_sewa" model="account.account">
             <field name="name">Beban Sewa Kos</field>
             <field name="code">613001</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_kos_listrik" model="account.account">
             <field name="name">Beban Listrik Kos</field>
             <field name="code">613002</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_kos_air" model="account.account">
             <field name="name">Beban Air Kos</field>
             <field name="code">613003</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
         <record id="exp_kos_maintenance" model="account.account">
             <field name="name">Beban Perawatan Kos</field>
             <field name="code">613004</field>
-            <field name="account_type">expense</field>
+            <field name="user_type_id" ref="account.data_account_type_expenses"/>
         </record>
     </data>
 </odoo>
