@@ -43,6 +43,15 @@
             <field name="default_credit_account_id" ref="custom_coa.acc_bank_superbank"/>
         </record>
 
+
+        <record id="journal_bank_seabank" model="account.journal">
+            <field name="name">SeaBank (Shopee)</field>
+            <field name="code">SEAB</field>
+            <field name="type">bank</field>
+            <field name="default_debit_account_id" ref="custom_coa.acc_bank_seabank"/>
+            <field name="default_credit_account_id" ref="custom_coa.acc_bank_seabank"/>
+        </record>
+
         <!-- Expense Journal -->
         <record id="journal_expense" model="account.journal">
             <field name="name">Beban</field>
