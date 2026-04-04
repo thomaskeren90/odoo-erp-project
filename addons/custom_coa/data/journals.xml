@@ -12,7 +12,7 @@
         </record>
 
         <record id="journal_bank_bca2_toko" model="account.journal">
-            <field name="name">BCA 2 Thomas Susin Chen (Toko)</field>
+            <field name="name">BCA 2 Thomas Toko</field>
             <field name="code">BCA2</field>
             <field name="type">bank</field>
             <field name="default_debit_account_id" ref="custom_coa.acc_bank_bca2_toko"/>
@@ -43,13 +43,26 @@
             <field name="default_credit_account_id" ref="custom_coa.acc_bank_superbank"/>
         </record>
 
-
         <record id="journal_bank_seabank" model="account.journal">
-            <field name="name">SeaBank (Shopee)</field>
+            <field name="name">SeaBank Shopee</field>
             <field name="code">SEAB</field>
             <field name="type">bank</field>
             <field name="default_debit_account_id" ref="custom_coa.acc_bank_seabank"/>
             <field name="default_credit_account_id" ref="custom_coa.acc_bank_seabank"/>
+        </record>
+
+        <!-- Sales Journal -->
+        <record id="journal_sales" model="account.journal">
+            <field name="name">Penjualan</field>
+            <field name="code">SALES</field>
+            <field name="type">sale</field>
+        </record>
+
+        <!-- Purchase Journal -->
+        <record id="journal_purchase" model="account.journal">
+            <field name="name">Pembelian</field>
+            <field name="code">PURCH</field>
+            <field name="type">purchase</field>
         </record>
 
         <!-- Expense Journal -->
@@ -57,6 +70,13 @@
             <field name="name">Beban</field>
             <field name="code">EXP</field>
             <field name="type">general</field>
+        </record>
+
+        <!-- Cash Journal -->
+        <record id="journal_cash" model="account.journal">
+            <field name="name">Kas</field>
+            <field name="code">CSH</field>
+            <field name="type">cash</field>
         </record>
 
     </data>
