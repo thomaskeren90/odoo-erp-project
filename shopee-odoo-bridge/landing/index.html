@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee-Odoo ERP Bridge — Sync Shopee to Odoo 13</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #ee4d2d, #ff6f3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .badge {
+            display: inline-block;
+            background: #ee4d2d22;
+            color: #ee4d2d;
+            border: 1px solid #ee4d2d44;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+        .flow-diagram {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 700px;
+            text-align: center;
+        }
+        .flow-diagram h3 {
+            color: #ee4d2d;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .flow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .flow-step {
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            min-width: 140px;
+        }
+        .flow-step .icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+        .flow-step .label { font-size: 0.85rem; color: #ccc; }
+        .flow-step .account { font-size: 0.75rem; color: #ee4d2d; margin-top: 0.3rem; }
+        .arrow { color: #555; font-size: 1.5rem; }
+
+        .features {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .feature-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .feature-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .feature-card h3 { color: #fff; margin-bottom: 0.5rem; font-size: 1rem; }
+        .feature-card p { color: #888; font-size: 0.9rem; }
+
+        .accounting {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .accounting h2 {
+            text-align: center;
+            color: #ee4d2d;
+            margin-bottom: 2rem;
+        }
+        .acc-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .acc-table th {
+            background: #1a1a2e;
+            color: #ee4d2d;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+        .acc-table td {
+            padding: 0.6rem 1rem;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+        }
+        .acc-table tr:hover { background: #151515; }
+        .acc-table .code { color: #ee4d2d; font-family: monospace; }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .cta a {
+            display: inline-block;
+            background: #ee4d2d;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .cta a:hover { background: #d63b1e; }
+
+        .tech {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .tech-item {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+        }
+        .tech-item .name { color: #fff; font-weight: 600; }
+        .tech-item .detail { color: #888; font-size: 0.8rem; }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #1a1a1a;
+        }
+        footer a { color: #ee4d2d; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="badge">🚀 Shopee Open Platform Integration</div>
+        <h1>Shopee → Odoo 13 Bridge</h1>
+        <p class="subtitle">
+            Automatic order sync from Shopee marketplace to Odoo 13 accounting.
+            Built for Indonesian e-commerce sellers.
+        </p>
+    </div>
+
+    <div class="flow-diagram">
+        <h3>📊 How Accounting Flows</h3>
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="icon">🛒</div>
+                <div class="label">Shopee Order</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">📄</div>
+                <div class="label">Invoice</div>
+                <div class="account">410001 E-commerce Sales</div>
+                <div class="account">112002 Piutang Marketplace</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">💸</div>
+                <div class="label">Shopee Pays</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">🏦</div>
+                <div class="label">SeaBank</div>
+                <div class="account">111006 SeaBank Shopee</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">📦</div>
+            <h3>Order Sync</h3>
+            <p>Shopee orders automatically create customer invoices in Odoo with correct product, quantity, and pricing.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💰</div>
+            <h3>Payment Tracking</h3>
+            <p>Shopee disbursements to SeaBank are recorded as journal entries. No manual reconciliation needed.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📊</div>
+            <h3>Fee Accounting</h3>
+            <p>Platform commissions, payment fees, and BigSeller charges are tracked as marketplace expenses.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">↩️</div>
+            <h3>Return Handling</h3>
+            <p>Shopee returns and refunds are recorded against the correct COGS account automatically.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔄</div>
+            <h3>Daemon Mode</h3>
+            <p>Run continuously with auto-sync every 30 minutes. Set and forget.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔐</div>
+            <h3>Secure</h3>
+            <p>Direct Shopee API connection with HMAC-SHA256 signing. No data goes through third parties.</p>
+        </div>
+    </div>
+
+    <div class="accounting">
+        <h2>🧮 Chart of Accounts (Indonesian Standard)</h2>
+        <table class="acc-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Account</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="code">111001-111006</td><td>Bank Accounts (BCA x3, SAQU, Superbank, SeaBank)</td><td>Asset</td></tr>
+                <tr><td class="code">112001</td><td>Piutang Usaha / AR</td><td>Asset</td></tr>
+                <tr><td class="code">112002</td><td>Piutang Marketplace</td><td>Asset</td></tr>
+                <tr><td class="code">113001</td><td>Persediaan Barang</td><td>Asset</td></tr>
+                <tr><td class="code">121001-121002</td><td>Aset Tetap (Kendaraan, Mesin Jahit)</td><td>Fixed Asset</td></tr>
+                <tr><td class="code">211001</td><td>Hutang Usaha / AP</td><td>Liability</td></tr>
+                <tr><td class="code">311000-313000</td><td>Modal, Prive, Laba Ditahan</td><td>Equity</td></tr>
+                <tr><td class="code">410001</td><td>Penjualan Produk E-commerce</td><td>Revenue</td></tr>
+                <tr><td class="code">410002-410005</td><td>Service, Kos, Mobil, Mesin Jahit</td><td>Revenue</td></tr>
+                <tr><td class="code">510001-510004</td><td>HPP, Bahan Baku, Logistik, Retur</td><td>COGS</td></tr>
+                <tr><td class="code">611001-619001</td><td>Operational Expenses</td><td>Expense</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tech">
+        <h2 style="color:#ee4d2d;">⚙️ Tech Stack</h2>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <div class="name">Shopee Open Platform API v2</div>
+                <div class="detail">HMAC-SHA256 Auth · Orders · Wallet · Returns</div>
+            </div>
+            <div class="tech-item">
+                <div class="name">Odoo 13 CE</div>
+                <div class="detail">XML-RPC · Invoices · Journal Entries</div>
+            </div>
+            <div class="tech-item">
+                <div class="name">Python 3</div>
+                <div class="detail">Zero external dependencies · stdlib only</div>
+            </div>
+            <div class="tech-item">
+                <div class="name">Docker</div>
+                <div class="detail">Odoo 13 · PostgreSQL 13</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="https://github.com/thomaskeren90/odoo-erp-project">View on GitHub →</a>
+    </div>
+
+    <footer>
+        <p>Shopee-Odoo ERP Bridge · Built for Indonesian e-commerce sellers</p>
+        <p>thomaskeren90 · <a href="https://github.com/thomaskeren90/odoo-erp-project">GitHub</a></p>
+    </footer>
+
+</body>
+</html>
