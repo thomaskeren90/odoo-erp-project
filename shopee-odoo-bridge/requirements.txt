@@ -1,0 +1,8 @@
+# Shopee-to-Odoo Bridge — no external dependencies
+# Uses only Python standard library:
+# - xmlrpc.client (Odoo XML-RPC)
+# - hashlib/hmac (Shopee API signing)
+# - urllib (HTTP requests)
+# - json (data handling)
+#
+# Python 3.6+ required
