@@ -43,6 +43,14 @@
             <field name="reconcile" eval="True"/>
         </record>
 
+        <!-- SeaBank (Shopee Online Store) -->
+        <record id="acc_bank_seabank" model="account.account">
+            <field name="name">SeaBank (Shopee)</field>
+            <field name="code">111006</field>
+            <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+            <field name="reconcile" eval="True"/>
+        </record>
+
         <!-- INVENTORY (Current Asset) -->
         <record id="acc_inventory" model="account.account">
             <field name="name">Persediaan Barang</field>
