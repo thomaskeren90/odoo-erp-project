@@ -1,0 +1,268 @@
+Complete Name,Location Name,Parent Location,Location Type,Is a Scrap Location,Is a Return Location,Barcode
+Stock/Small Parts Wall,Small Parts Wall,Stock,Internal,FALSE,FALSE,LOC-A
+Stock/Small Parts Wall/A-01,"A-01 (Jarum / Needles, Sepatu / Pres)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-01
+Stock/Small Parts Wall/A-02,"A-02 (Jarum / Needles, Sepatu / Pres)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-02
+Stock/Small Parts Wall/A-03,"A-03 (Jarum / Needles, Sepatu / Pres)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-03
+Stock/Small Parts Wall/A-04,"A-04 (Jarum / Needles, Sepatu / Pres)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-04
+Stock/Small Parts Wall/A-05,"A-05 (Jarum / Needles, Sparepart / P)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-05
+Stock/Small Parts Wall/A-06,"A-06 (Jarum / Needles, Sparepart / P)",Small Parts Wall,Internal,FALSE,FALSE,LOC-A-06
+Stock/Small Parts Wall/A-07,A-07 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-07
+Stock/Small Parts Wall/A-08,A-08 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-08
+Stock/Small Parts Wall/A-09,A-09 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-09
+Stock/Small Parts Wall/A-10,A-10 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-10
+Stock/Small Parts Wall/A-11,A-11 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-11
+Stock/Small Parts Wall/A-12,A-12 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-12
+Stock/Small Parts Wall/A-13,A-13 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-13
+Stock/Small Parts Wall/A-14,A-14 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-14
+Stock/Small Parts Wall/A-15,A-15 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-15
+Stock/Small Parts Wall/A-16,A-16 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-16
+Stock/Small Parts Wall/A-17,A-17 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-17
+Stock/Small Parts Wall/A-18,A-18 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-18
+Stock/Small Parts Wall/A-19,A-19 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-19
+Stock/Small Parts Wall/A-20,A-20 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-20
+Stock/Small Parts Wall/A-21,A-21 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-21
+Stock/Small Parts Wall/A-22,A-22 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-22
+Stock/Small Parts Wall/A-23,A-23 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-23
+Stock/Small Parts Wall/A-24,A-24 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-24
+Stock/Small Parts Wall/A-25,A-25 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-25
+Stock/Small Parts Wall/A-26,A-26 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-26
+Stock/Small Parts Wall/A-27,A-27 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-27
+Stock/Small Parts Wall/A-28,A-28 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-28
+Stock/Small Parts Wall/A-29,A-29 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-29
+Stock/Small Parts Wall/A-30,A-30 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-30
+Stock/Small Parts Wall/A-31,A-31 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-31
+Stock/Small Parts Wall/A-32,A-32 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-32
+Stock/Small Parts Wall/A-33,A-33 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-33
+Stock/Small Parts Wall/A-34,A-34 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-34
+Stock/Small Parts Wall/A-35,A-35 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-35
+Stock/Small Parts Wall/A-36,A-36 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-36
+Stock/Small Parts Wall/A-37,A-37 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-37
+Stock/Small Parts Wall/A-38,A-38 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-38
+Stock/Small Parts Wall/A-39,A-39 (Jarum / Needles),Small Parts Wall,Internal,FALSE,FALSE,LOC-A-39
+Stock/Medium Parts Shelving,Medium Parts Shelving,Stock,Internal,FALSE,FALSE,LOC-B
+Stock/Medium Parts Shelving/B-01,"B-01 (Gunting / Scissors, Benang / T)",Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-01
+Stock/Medium Parts Shelving/B-02,"B-02 (Gunting / Scissors, Benang / T)",Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-02
+Stock/Medium Parts Shelving/B-03,"B-03 (Gunting / Scissors, Benang / T)",Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-03
+Stock/Medium Parts Shelving/B-04,"B-04 (Gunting / Scissors, Benang / T)",Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-04
+Stock/Medium Parts Shelving/B-05,"B-05 (Gunting / Scissors, Benang / T)",Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-05
+Stock/Medium Parts Shelving/B-06,B-06 (Gunting / Scissors),Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-06
+Stock/Medium Parts Shelving/B-07,B-07 (Gunting / Scissors),Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-07
+Stock/Medium Parts Shelving/B-08,B-08 (Gunting / Scissors),Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-08
+Stock/Medium Parts Shelving/B-09,B-09 (Gunting / Scissors),Medium Parts Shelving,Internal,FALSE,FALSE,LOC-B-09
+Stock/Large Items / Machines,Large Items / Machines,Stock,Internal,FALSE,FALSE,LOC-C
+Stock/Large Items / Machines/C-01,"C-01 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-01
+Stock/Large Items / Machines/C-02,"C-02 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-02
+Stock/Large Items / Machines/C-03,"C-03 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-03
+Stock/Large Items / Machines/C-04,"C-04 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-04
+Stock/Large Items / Machines/C-05,"C-05 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-05
+Stock/Large Items / Machines/C-06,"C-06 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-06
+Stock/Large Items / Machines/C-07,"C-07 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-07
+Stock/Large Items / Machines/C-08,"C-08 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-08
+Stock/Large Items / Machines/C-09,"C-09 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-09
+Stock/Large Items / Machines/C-10,"C-10 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-10
+Stock/Large Items / Machines/C-100,C-100 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-100
+Stock/Large Items / Machines/C-101,C-101 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-101
+Stock/Large Items / Machines/C-102,C-102 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-102
+Stock/Large Items / Machines/C-103,C-103 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-103
+Stock/Large Items / Machines/C-104,C-104 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-104
+Stock/Large Items / Machines/C-105,C-105 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-105
+Stock/Large Items / Machines/C-106,C-106 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-106
+Stock/Large Items / Machines/C-107,C-107 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-107
+Stock/Large Items / Machines/C-108,C-108 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-108
+Stock/Large Items / Machines/C-109,C-109 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-109
+Stock/Large Items / Machines/C-11,"C-11 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-11
+Stock/Large Items / Machines/C-110,C-110 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-110
+Stock/Large Items / Machines/C-111,C-111 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-111
+Stock/Large Items / Machines/C-112,C-112 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-112
+Stock/Large Items / Machines/C-113,C-113 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-113
+Stock/Large Items / Machines/C-114,C-114 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-114
+Stock/Large Items / Machines/C-115,C-115 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-115
+Stock/Large Items / Machines/C-116,C-116 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-116
+Stock/Large Items / Machines/C-117,C-117 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-117
+Stock/Large Items / Machines/C-118,C-118 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-118
+Stock/Large Items / Machines/C-119,C-119 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-119
+Stock/Large Items / Machines/C-12,"C-12 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-12
+Stock/Large Items / Machines/C-120,C-120 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-120
+Stock/Large Items / Machines/C-121,C-121 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-121
+Stock/Large Items / Machines/C-122,C-122 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-122
+Stock/Large Items / Machines/C-123,C-123 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-123
+Stock/Large Items / Machines/C-124,C-124 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-124
+Stock/Large Items / Machines/C-125,C-125 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-125
+Stock/Large Items / Machines/C-126,C-126 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-126
+Stock/Large Items / Machines/C-127,C-127 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-127
+Stock/Large Items / Machines/C-128,C-128 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-128
+Stock/Large Items / Machines/C-129,C-129 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-129
+Stock/Large Items / Machines/C-13,"C-13 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-13
+Stock/Large Items / Machines/C-130,C-130 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-130
+Stock/Large Items / Machines/C-131,C-131 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-131
+Stock/Large Items / Machines/C-132,C-132 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-132
+Stock/Large Items / Machines/C-133,C-133 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-133
+Stock/Large Items / Machines/C-134,C-134 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-134
+Stock/Large Items / Machines/C-135,C-135 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-135
+Stock/Large Items / Machines/C-136,C-136 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-136
+Stock/Large Items / Machines/C-137,C-137 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-137
+Stock/Large Items / Machines/C-138,C-138 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-138
+Stock/Large Items / Machines/C-139,C-139 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-139
+Stock/Large Items / Machines/C-14,"C-14 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-14
+Stock/Large Items / Machines/C-140,C-140 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-140
+Stock/Large Items / Machines/C-141,C-141 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-141
+Stock/Large Items / Machines/C-142,C-142 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-142
+Stock/Large Items / Machines/C-143,C-143 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-143
+Stock/Large Items / Machines/C-144,C-144 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-144
+Stock/Large Items / Machines/C-145,C-145 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-145
+Stock/Large Items / Machines/C-146,C-146 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-146
+Stock/Large Items / Machines/C-147,C-147 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-147
+Stock/Large Items / Machines/C-148,C-148 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-148
+Stock/Large Items / Machines/C-149,C-149 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-149
+Stock/Large Items / Machines/C-15,"C-15 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-15
+Stock/Large Items / Machines/C-150,C-150 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-150
+Stock/Large Items / Machines/C-151,C-151 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-151
+Stock/Large Items / Machines/C-152,C-152 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-152
+Stock/Large Items / Machines/C-153,C-153 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-153
+Stock/Large Items / Machines/C-154,C-154 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-154
+Stock/Large Items / Machines/C-155,C-155 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-155
+Stock/Large Items / Machines/C-156,C-156 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-156
+Stock/Large Items / Machines/C-157,C-157 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-157
+Stock/Large Items / Machines/C-158,C-158 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-158
+Stock/Large Items / Machines/C-159,C-159 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-159
+Stock/Large Items / Machines/C-16,"C-16 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-16
+Stock/Large Items / Machines/C-160,C-160 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-160
+Stock/Large Items / Machines/C-161,C-161 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-161
+Stock/Large Items / Machines/C-162,C-162 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-162
+Stock/Large Items / Machines/C-163,C-163 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-163
+Stock/Large Items / Machines/C-164,C-164 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-164
+Stock/Large Items / Machines/C-165,C-165 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-165
+Stock/Large Items / Machines/C-166,C-166 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-166
+Stock/Large Items / Machines/C-167,C-167 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-167
+Stock/Large Items / Machines/C-168,C-168 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-168
+Stock/Large Items / Machines/C-169,C-169 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-169
+Stock/Large Items / Machines/C-17,"C-17 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-17
+Stock/Large Items / Machines/C-170,C-170 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-170
+Stock/Large Items / Machines/C-171,C-171 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-171
+Stock/Large Items / Machines/C-172,C-172 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-172
+Stock/Large Items / Machines/C-173,C-173 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-173
+Stock/Large Items / Machines/C-174,C-174 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-174
+Stock/Large Items / Machines/C-175,C-175 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-175
+Stock/Large Items / Machines/C-176,C-176 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-176
+Stock/Large Items / Machines/C-177,C-177 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-177
+Stock/Large Items / Machines/C-178,C-178 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-178
+Stock/Large Items / Machines/C-179,C-179 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-179
+Stock/Large Items / Machines/C-18,"C-18 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-18
+Stock/Large Items / Machines/C-180,C-180 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-180
+Stock/Large Items / Machines/C-181,C-181 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-181
+Stock/Large Items / Machines/C-182,C-182 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-182
+Stock/Large Items / Machines/C-183,C-183 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-183
+Stock/Large Items / Machines/C-184,C-184 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-184
+Stock/Large Items / Machines/C-185,C-185 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-185
+Stock/Large Items / Machines/C-186,C-186 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-186
+Stock/Large Items / Machines/C-187,C-187 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-187
+Stock/Large Items / Machines/C-188,C-188 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-188
+Stock/Large Items / Machines/C-189,C-189 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-189
+Stock/Large Items / Machines/C-19,"C-19 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-19
+Stock/Large Items / Machines/C-190,C-190 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-190
+Stock/Large Items / Machines/C-191,C-191 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-191
+Stock/Large Items / Machines/C-192,C-192 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-192
+Stock/Large Items / Machines/C-193,C-193 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-193
+Stock/Large Items / Machines/C-194,C-194 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-194
+Stock/Large Items / Machines/C-195,C-195 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-195
+Stock/Large Items / Machines/C-196,C-196 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-196
+Stock/Large Items / Machines/C-197,C-197 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-197
+Stock/Large Items / Machines/C-198,C-198 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-198
+Stock/Large Items / Machines/C-199,C-199 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-199
+Stock/Large Items / Machines/C-20,"C-20 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-20
+Stock/Large Items / Machines/C-200,C-200 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-200
+Stock/Large Items / Machines/C-201,C-201 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-201
+Stock/Large Items / Machines/C-202,C-202 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-202
+Stock/Large Items / Machines/C-203,C-203 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-203
+Stock/Large Items / Machines/C-204,C-204 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-204
+Stock/Large Items / Machines/C-205,C-205 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-205
+Stock/Large Items / Machines/C-206,C-206 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-206
+Stock/Large Items / Machines/C-207,C-207 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-207
+Stock/Large Items / Machines/C-208,C-208 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-208
+Stock/Large Items / Machines/C-209,C-209 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-209
+Stock/Large Items / Machines/C-21,"C-21 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-21
+Stock/Large Items / Machines/C-210,C-210 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-210
+Stock/Large Items / Machines/C-211,C-211 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-211
+Stock/Large Items / Machines/C-212,C-212 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-212
+Stock/Large Items / Machines/C-213,C-213 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-213
+Stock/Large Items / Machines/C-214,C-214 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-214
+Stock/Large Items / Machines/C-215,C-215 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-215
+Stock/Large Items / Machines/C-216,C-216 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-216
+Stock/Large Items / Machines/C-22,"C-22 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-22
+Stock/Large Items / Machines/C-23,"C-23 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-23
+Stock/Large Items / Machines/C-24,"C-24 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-24
+Stock/Large Items / Machines/C-25,"C-25 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-25
+Stock/Large Items / Machines/C-26,"C-26 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-26
+Stock/Large Items / Machines/C-27,"C-27 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-27
+Stock/Large Items / Machines/C-28,"C-28 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-28
+Stock/Large Items / Machines/C-29,"C-29 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-29
+Stock/Large Items / Machines/C-30,"C-30 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-30
+Stock/Large Items / Machines/C-31,"C-31 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-31
+Stock/Large Items / Machines/C-32,"C-32 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-32
+Stock/Large Items / Machines/C-33,"C-33 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-33
+Stock/Large Items / Machines/C-34,"C-34 (Mesin Jahit / Sewing Machine, )",Large Items / Machines,Internal,FALSE,FALSE,LOC-C-34
+Stock/Large Items / Machines/C-35,C-35 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-35
+Stock/Large Items / Machines/C-36,C-36 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-36
+Stock/Large Items / Machines/C-37,C-37 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-37
+Stock/Large Items / Machines/C-38,C-38 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-38
+Stock/Large Items / Machines/C-39,C-39 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-39
+Stock/Large Items / Machines/C-40,C-40 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-40
+Stock/Large Items / Machines/C-41,C-41 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-41
+Stock/Large Items / Machines/C-42,C-42 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-42
+Stock/Large Items / Machines/C-43,C-43 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-43
+Stock/Large Items / Machines/C-44,C-44 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-44
+Stock/Large Items / Machines/C-45,C-45 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-45
+Stock/Large Items / Machines/C-46,C-46 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-46
+Stock/Large Items / Machines/C-47,C-47 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-47
+Stock/Large Items / Machines/C-48,C-48 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-48
+Stock/Large Items / Machines/C-49,C-49 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-49
+Stock/Large Items / Machines/C-50,C-50 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-50
+Stock/Large Items / Machines/C-51,C-51 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-51
+Stock/Large Items / Machines/C-52,C-52 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-52
+Stock/Large Items / Machines/C-53,C-53 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-53
+Stock/Large Items / Machines/C-54,C-54 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-54
+Stock/Large Items / Machines/C-55,C-55 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-55
+Stock/Large Items / Machines/C-56,C-56 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-56
+Stock/Large Items / Machines/C-57,C-57 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-57
+Stock/Large Items / Machines/C-58,C-58 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-58
+Stock/Large Items / Machines/C-59,C-59 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-59
+Stock/Large Items / Machines/C-60,C-60 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-60
+Stock/Large Items / Machines/C-61,C-61 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-61
+Stock/Large Items / Machines/C-62,C-62 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-62
+Stock/Large Items / Machines/C-63,C-63 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-63
+Stock/Large Items / Machines/C-64,C-64 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-64
+Stock/Large Items / Machines/C-65,C-65 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-65
+Stock/Large Items / Machines/C-66,C-66 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-66
+Stock/Large Items / Machines/C-67,C-67 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-67
+Stock/Large Items / Machines/C-68,C-68 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-68
+Stock/Large Items / Machines/C-69,C-69 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-69
+Stock/Large Items / Machines/C-70,C-70 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-70
+Stock/Large Items / Machines/C-71,C-71 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-71
+Stock/Large Items / Machines/C-72,C-72 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-72
+Stock/Large Items / Machines/C-73,C-73 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-73
+Stock/Large Items / Machines/C-74,C-74 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-74
+Stock/Large Items / Machines/C-75,C-75 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-75
+Stock/Large Items / Machines/C-76,C-76 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-76
+Stock/Large Items / Machines/C-77,C-77 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-77
+Stock/Large Items / Machines/C-78,C-78 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-78
+Stock/Large Items / Machines/C-79,C-79 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-79
+Stock/Large Items / Machines/C-80,C-80 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-80
+Stock/Large Items / Machines/C-81,C-81 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-81
+Stock/Large Items / Machines/C-82,C-82 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-82
+Stock/Large Items / Machines/C-83,C-83 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-83
+Stock/Large Items / Machines/C-84,C-84 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-84
+Stock/Large Items / Machines/C-85,C-85 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-85
+Stock/Large Items / Machines/C-86,C-86 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-86
+Stock/Large Items / Machines/C-87,C-87 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-87
+Stock/Large Items / Machines/C-88,C-88 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-88
+Stock/Large Items / Machines/C-89,C-89 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-89
+Stock/Large Items / Machines/C-90,C-90 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-90
+Stock/Large Items / Machines/C-91,C-91 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-91
+Stock/Large Items / Machines/C-92,C-92 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-92
+Stock/Large Items / Machines/C-93,C-93 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-93
+Stock/Large Items / Machines/C-94,C-94 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-94
+Stock/Large Items / Machines/C-95,C-95 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-95
+Stock/Large Items / Machines/C-96,C-96 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-96
+Stock/Large Items / Machines/C-97,C-97 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-97
+Stock/Large Items / Machines/C-98,C-98 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-98
+Stock/Large Items / Machines/C-99,C-99 (Mesin Jahit / Sewing Machine),Large Items / Machines,Internal,FALSE,FALSE,LOC-C-99
