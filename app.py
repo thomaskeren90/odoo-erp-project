@@ -434,6 +434,12 @@ input[type="file"] { display: none; }
 .submit-btn { width: 100%; padding: 14px; background: #4CAF50; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
 .submit-btn:disabled { background: #ccc; }
 #status { padding: 12px; border-radius: 8px; margin-top: 12px; display: none; }
+.check-field { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.check-field input[type="checkbox"] { width: 20px; height: 20px; accent-color: #4CAF50; flex-shrink: 0; }
+.check-field .field { flex: 1; margin-bottom: 0; }
+.check-field input[type="checkbox"]:checked + .field label { color: #2e7d32; }
+.check-all-btn { background: none; border: 1px solid #4CAF50; color: #4CAF50; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; margin-bottom: 12px; }
+.verify-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .success { background: #e8f5e9; color: #2e7d32; }
 .error { background: #ffebee; color: #c62828; }
 .raw-text { background: #f9f9f9; padding: 8px; border-radius: 4px; font-size: 12px; max-height: 100px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; }
@@ -470,9 +476,22 @@ input[type="file"] { display: none; }
             <img id="resultImg" style="width:100%; border-radius:8px; border:1px solid #eee;">
         </div>
         <div class="form-col">
-            <div class="field"><label>Supplier</label><input id="supplier"></div>
-    <div class="field"><label>Amount (Rp)</label><input id="amount" type="number" inputmode="numeric"></div>
-    <div class="field"><label>Description</label><textarea id="description" rows="2"></textarea></div>
+            <div class="verify-header">
+                <span style="font-size:14px; font-weight:600;">Verify extracted data</span>
+                <button class="check-all-btn" onclick="checkAll()">✓ Check all</button>
+            </div>
+            <div class="check-field">
+                <input type="checkbox" id="chk_supplier" onchange="updateSubmit()">
+                <div class="field"><label>Supplier</label><input id="supplier" oninput="document.getElementById('chk_supplier').checked=true;updateSubmit()"></div>
+            </div>
+            <div class="check-field">
+                <input type="checkbox" id="chk_amount" onchange="updateSubmit()">
+                <div class="field"><label>Amount (Rp)</label><input id="amount" type="number" inputmode="numeric" oninput="document.getElementById('chk_amount').checked=true;updateSubmit()"></div>
+            </div>
+            <div class="check-field">
+                <input type="checkbox" id="chk_description" onchange="updateSubmit()">
+                <div class="field"><label>Description</label><textarea id="description" rows="2" oninput="document.getElementById('chk_description').checked=true;updateSubmit()"></textarea></div>
+            </div>
 
     <div class="type-select">
         <div class="type-btn" id="btn-expense" onclick="selectType('expense')">💰 Expense</div>
@@ -480,15 +499,22 @@ input[type="file"] { display: none; }
     </div>
 
     <div id="expense-fields" style="display:none">
-        <div class="field"><label>Account</label><select id="account_id"><option>-- Select --</option></select></div>
+        <div class="check-field">
+            <input type="checkbox" id="chk_account" onchange="updateSubmit()">
+            <div class="field"><label>Account</label><select id="account_id" onchange="document.getElementById('chk_account').checked=true;updateSubmit()"><option>-- Select --</option></select></div>
+        </div>
     </div>
     <div id="cogs-fields" style="display:none">
-        <div class="field"><label>Product</label><select id="product_id"><option>-- Select --</option></select></div>
+        <div class="check-field">
+            <input type="checkbox" id="chk_product" onchange="updateSubmit()">
+            <div class="field"><label>Product</label><select id="product_id" onchange="document.getElementById('chk_product').checked=true;updateSubmit()"><option>-- Select --</option></select></div>
+        </div>
     </div>
         </div><!-- end form-col -->
     </div><!-- end side-by-side -->
 
-    <button class="submit-btn" id="submitBtn" onclick="submitEntry()">💾 Save to Odoo</button>
+    <div id="checkProgress" style="margin-bottom:8px; font-size:12px; color:#666;"></div>
+    <button class="submit-btn" id="submitBtn" onclick="submitEntry()" disabled>✅ Proceed to Odoo 13</button>
     <div id="status"></div>
 
     <details style="margin-top:12px">
@@ -499,6 +525,28 @@ input[type="file"] { display: none; }
 
 <script>
 let ocrData = {}, currentFilename = '', selectedType = '';
+
+function updateSubmit() {
+    const base = ['chk_supplier', 'chk_amount', 'chk_description'];
+    const typeExtra = selectedType === 'expense' ? ['chk_account'] : selectedType === 'cogs' ? ['chk_product'] : [];
+    const all = [...base, ...typeExtra];
+    const checked = all.filter(id => document.getElementById(id)?.checked).length;
+    const btn = document.getElementById('submitBtn');
+    const prog = document.getElementById('checkProgress');
+    
+    btn.disabled = checked < all.length;
+    btn.textContent = checked >= all.length ? '✅ Proceed to Odoo 13' : `☑️ ${checked}/${all.length} verified — check all to proceed`;
+    prog.textContent = all.length > 0 ? `Verified: ${checked} of ${all.length} fields` : '';
+}
+
+function checkAll() {
+    ['chk_supplier', 'chk_amount', 'chk_description'].forEach(id => {
+        document.getElementById(id).checked = true;
+    });
+    if (selectedType === 'expense') document.getElementById('chk_account').checked = true;
+    if (selectedType === 'cogs') document.getElementById('chk_product').checked = true;
+    updateSubmit();
+}
 
 document.getElementById('photo').addEventListener('change', function(e) {
     if (!this.files[0]) return;
@@ -566,6 +614,10 @@ function selectType(type) {
     document.getElementById('btn-'+type).classList.add('selected');
     document.getElementById('expense-fields').style.display = type==='expense'?'block':'none';
     document.getElementById('cogs-fields').style.display = type==='cogs'?'block':'none';
+    // Reset type-specific checkboxes
+    if (document.getElementById('chk_account')) document.getElementById('chk_account').checked = false;
+    if (document.getElementById('chk_product')) document.getElementById('chk_product').checked = false;
+    updateSubmit();
 }
 
 function submitEntry() {
@@ -588,14 +640,14 @@ function submitEntry() {
     })
     .then(r => r.json())
     .then(data => {
-        btn.disabled = false; btn.textContent = '💾 Save to Odoo';
+        btn.disabled = false; btn.textContent = '✅ Proceed to Odoo 13'; updateSubmit();
         const s = document.getElementById('status');
         s.style.display = 'block';
         if (data.success) { s.className='success'; s.textContent='✅ '+data.message; }
         else { s.className='error'; s.textContent='❌ '+data.error; }
     })
     .catch(err => {
-        btn.disabled = false; btn.textContent = '💾 Save to Odoo';
+        btn.disabled = false; btn.textContent = '✅ Proceed to Odoo 13'; updateSubmit();
         alert('Submit failed: '+err.message);
     });
 }
