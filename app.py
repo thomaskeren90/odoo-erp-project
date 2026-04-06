@@ -416,6 +416,15 @@ input[type="file"] { display: none; }
 .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #4CAF50; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 #results { display: none; background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+@media (min-width: 768px) {
+    .side-by-side { display: flex; gap: 16px; }
+    .side-by-side .image-col { flex: 1; }
+    .side-by-side .form-col { flex: 1; }
+}
+@media (max-width: 767px) {
+    .side-by-side .image-col { margin-bottom: 16px; }
+    .side-by-side .image-col img { max-height: 300px; object-fit: contain; }
+}
 .field { margin-bottom: 12px; }
 .field label { display: block; font-size: 13px; color: #666; margin-bottom: 4px; }
 .field input, .field select, .field textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; }
@@ -446,6 +455,9 @@ input[type="file"] { display: none; }
     </div>
 </div>
 
+<div id="preview" style="display:none; margin-bottom:16px;">
+    <img id="previewImg" style="width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+</div>
 <div id="loading">
     <div class="spinner"></div>
     <p>AI is reading your receipt...</p>
@@ -453,7 +465,12 @@ input[type="file"] { display: none; }
 
 <div id="results">
     <h3 style="margin-bottom:12px">Extracted Data <span id="aiBadge" class="ai-badge"></span></h3>
-    <div class="field"><label>Supplier</label><input id="supplier"></div>
+    <div class="side-by-side">
+        <div class="image-col">
+            <img id="resultImg" style="width:100%; border-radius:8px; border:1px solid #eee;">
+        </div>
+        <div class="form-col">
+            <div class="field"><label>Supplier</label><input id="supplier"></div>
     <div class="field"><label>Amount (Rp)</label><input id="amount" type="number" inputmode="numeric"></div>
     <div class="field"><label>Description</label><textarea id="description" rows="2"></textarea></div>
 
@@ -468,6 +485,8 @@ input[type="file"] { display: none; }
     <div id="cogs-fields" style="display:none">
         <div class="field"><label>Product</label><select id="product_id"><option>-- Select --</option></select></div>
     </div>
+        </div><!-- end form-col -->
+    </div><!-- end side-by-side -->
 
     <button class="submit-btn" id="submitBtn" onclick="submitEntry()">💾 Save to Odoo</button>
     <div id="status"></div>
@@ -485,6 +504,14 @@ document.getElementById('photo').addEventListener('change', function(e) {
     if (!this.files[0]) return;
     const fd = new FormData();
     fd.append('photo', this.files[0]);
+
+    // Show preview
+    const reader = new FileReader();
+    reader.onload = e => {
+        document.getElementById('previewImg').src = e.target.result;
+        document.getElementById('preview').style.display = 'block';
+    };
+    reader.readAsDataURL(this.files[0]);
 
     document.getElementById('loading').style.display = 'block';
     document.getElementById('results').style.display = 'none';
@@ -510,6 +537,8 @@ function showResults(data) {
     document.getElementById('amount').value = ocrData.total || '';
     document.getElementById('description').value = ocrData.notes || '';
     document.getElementById('rawText').textContent = JSON.stringify(ocrData, null, 2);
+    // Copy preview to result image
+    document.getElementById('resultImg').src = document.getElementById('previewImg').src;
 
     const badge = document.getElementById('aiBadge');
     badge.textContent = ocrData.ai_provider || 'AI';
