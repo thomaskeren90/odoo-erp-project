@@ -16,7 +16,7 @@ ODOO_PASSWORD = "your_password"
 # Option 1: Ollama (local) - pull a vision model first:
 #   docker exec ollama_brain ollama pull llava:phi3
 OLLAMA_URL = "http://localhost:11434"
-OLLAMA_MODEL = "llava:phi3"
+OLLAMA_MODEL = "gemma3:1b"
 
 # Option 2: OpenAI GPT-4o-mini (~$0.001/receipt)
 OPENAI_API_KEY = ""
