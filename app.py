@@ -736,4 +736,4 @@ if __name__ == '__main__':
     print(f"🤖 AI: {AI_PROVIDER}")
     print(f"🌐 Open: http://localhost:{PORT}")
     print(f"📱 Phone: http://<your-laptop-ip>:{PORT}")
-    app.run(host=HOST, port=PORT, debug=True)
+    app.run(host=HOST, port=PORT, debug=False)
