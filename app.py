@@ -464,12 +464,15 @@ input[type="file"] { display: none; }
 <h1>📸 Receipt Scanner</h1>
 
 <div class="upload-area">
-    <form id="uploadForm" enctype="multipart/form-data">
-        <div class="icon">📱</div>
-        <p style="font-size:15px; color:#666; margin-bottom:10px;">Upload receipt image</p>
-        <input type="file" id="photo" name="photo" accept="image/*" style="display:block; margin:10px auto; font-size:14px;">
-        <button type="submit" class="btn btn-cam" style="margin-top:10px;">🔍 Scan Receipt</button>
-    </form>
+    <label class="upload-label" for="photo">
+        <span class="icon">📱</span>
+        Take photo or upload receipt
+    </label>
+    <input type="file" id="photo" accept="image/*" capture="environment">
+    <div style="margin-top:10px">
+        <button class="btn btn-cam" onclick="document.getElementById('photo').capture='environment'; document.getElementById('photo').click()">📷 Camera</button>
+        <button class="btn btn-gal" onclick="document.getElementById('photo').capture=''; document.getElementById('photo').click()">🖼️ Gallery</button>
+    </div>
 </div>
 
 <img id="previewImg" style="display:none">
@@ -532,19 +535,16 @@ input[type="file"] { display: none; }
 <script>
 let ocrData = {}, currentFilename = '', selectedType = '', confirmed = false;
 
-document.getElementById('uploadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const fileInput = document.getElementById('photo');
-    if (!fileInput.files[0]) { alert('Please select an image first'); return; }
-    
+document.getElementById('photo').addEventListener('change', function() {
+    if (!this.files[0]) return;
     confirmed = false;
     const fd = new FormData();
-    fd.append('photo', fileInput.files[0]);
+    fd.append('photo', this.files[0]);
 
     // Store image for preview
     const reader = new FileReader();
-    reader.onload = ev => { document.getElementById('previewImg').src = ev.target.result; };
-    reader.readAsDataURL(fileInput.files[0]);
+    reader.onload = e => { document.getElementById('previewImg').src = e.target.result; };
+    reader.readAsDataURL(this.files[0]);
 
     document.getElementById('loading').style.display = 'block';
     document.getElementById('results').style.display = 'none';
