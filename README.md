@@ -1,7 +1,7 @@
 # Odoo ERP Project
 
 ## Vision
-Build a multi-company ERP system using Odoo Community Edition 16.
+Build a multi-company ERP system using Odoo Community Edition 13.
 
 ## Companies to Track
 1. **Sewing Machine Business** — inventory, sales, purchases, BigSeller e-commerce sync
@@ -82,7 +82,7 @@ Custom module: `addons/custom_coa/`
 
 ## Phases
 ### Phase 1: Core Accounting (Week 1)
-- Set up Odoo CE 16
+- Set up Odoo CE 13
 - Configure both companies
 - Chart of accounts, journals, opening balances
 - Bank statement import workflow
