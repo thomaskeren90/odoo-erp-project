@@ -394,8 +394,7 @@ def _parse_amount(val):
 # HTML TEMPLATE (phone-friendly)
 # ═══════════════════════════════════════════════════════════════
 
-HTML_TEMPLATE = """
-<!DOCTYPE html>
+HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -403,46 +402,61 @@ HTML_TEMPLATE = """
 <title>Receipt Scanner</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, sans-serif; background: #f5f5f5; padding: 16px; max-width: 500px; margin: 0 auto; }
-h1 { font-size: 20px; margin-bottom: 16px; text-align: center; }
-.upload-area { background: white; border: 2px dashed #ccc; border-radius: 12px; padding: 32px; text-align: center; margin-bottom: 16px; }
-.upload-area:hover { border-color: #4CAF50; }
+body { font-family: -apple-system, monospace; background: #f5f5f5; padding: 12px; }
+h1 { font-size: 20px; margin-bottom: 12px; text-align: center; }
+
+/* Upload */
+.upload-area { background: white; border: 2px dashed #ccc; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 12px; }
+.upload-label { display: block; font-size: 15px; color: #666; cursor: pointer; }
+.upload-label .icon { font-size: 40px; display: block; margin-bottom: 6px; }
 input[type="file"] { display: none; }
-.upload-label { display: block; font-size: 16px; color: #666; cursor: pointer; }
-.upload-label .icon { font-size: 48px; display: block; margin-bottom: 8px; }
-.camera-btn { background: #4CAF50; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; margin: 8px; cursor: pointer; }
-.gallery-btn { background: #2196F3; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; margin: 8px; cursor: pointer; }
+.btn { border: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; margin: 4px; color: white; }
+.btn-cam { background: #4CAF50; }
+.btn-gal { background: #2196F3; }
+
+/* Loading */
 #loading { display: none; text-align: center; padding: 20px; }
-.spinner { border: 4px solid #f3f3f3; border-top: 4px solid #4CAF50; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-#results { display: none; background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-@media (min-width: 768px) {
-    .side-by-side { display: flex; gap: 16px; }
-    .side-by-side .image-col { flex: 1; }
-    .side-by-side .form-col { flex: 1; }
+.spinner { border: 4px solid #f3f3f3; border-top: 4px solid #4CAF50; border-radius: 50%; width: 36px; height: 36px; animation: spin 1s linear infinite; margin: 0 auto 8px; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Results */
+#results { display: none; }
+.side-by-side { display: flex; gap: 12px; }
+.image-col { flex: 1; min-width: 0; }
+.image-col img { width: 100%; border-radius: 8px; border: 1px solid #ddd; }
+.text-col { flex: 1; min-width: 0; }
+.extracted-box { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px; line-height: 1.6; white-space: pre-wrap; word-break: break-all; max-height: 70vh; overflow-y: auto; }
+.extracted-box .tag { color: #1565c0; font-weight: bold; }
+.extracted-box .val { color: #222; }
+.extracted-box .line { border-bottom: 1px solid #eee; padding: 2px 0; }
+
+/* Mobile: stack */
+@media (max-width: 700px) {
+  .side-by-side { flex-direction: column; }
+  .image-col img { max-height: 350px; object-fit: contain; }
 }
-@media (max-width: 767px) {
-    .side-by-side .image-col { margin-bottom: 16px; }
-    .side-by-side .image-col img { max-height: 300px; object-fit: contain; }
-}
-.field { margin-bottom: 12px; }
-.field label { display: block; font-size: 13px; color: #666; margin-bottom: 4px; }
-.field input, .field select, .field textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; }
-.type-select { display: flex; gap: 10px; margin-bottom: 16px; }
-.type-btn { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 8px; text-align: center; font-size: 14px; cursor: pointer; background: white; }
-.type-btn.selected { border-color: #4CAF50; background: #e8f5e9; }
-.submit-btn { width: 100%; padding: 14px; background: #4CAF50; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
-.submit-btn:disabled { background: #ccc; }
-#status { padding: 12px; border-radius: 8px; margin-top: 12px; display: none; }
-.check-field { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-.check-field input[type="checkbox"] { width: 20px; height: 20px; accent-color: #4CAF50; flex-shrink: 0; }
-.check-field .field { flex: 1; margin-bottom: 0; }
-.check-field input[type="checkbox"]:checked + .field label { color: #2e7d32; }
-.check-all-btn { background: none; border: 1px solid #4CAF50; color: #4CAF50; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; margin-bottom: 12px; }
-.verify-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+
+/* Action bar */
+.action-bar { margin-top: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.btn-edit { background: #FF9800; }
+.btn-save { background: #4CAF50; }
+.btn-save:disabled { background: #ccc; }
+.progress-text { font-size: 12px; color: #666; }
+#status { padding: 10px; border-radius: 8px; margin-top: 10px; display: none; font-size: 14px; }
 .success { background: #e8f5e9; color: #2e7d32; }
 .error { background: #ffebee; color: #c62828; }
-.raw-text { background: #f9f9f9; padding: 8px; border-radius: 4px; font-size: 12px; max-height: 100px; overflow-y: auto; white-space: pre-wrap; word-break: break-all; }
+
+/* Edit modal */
+#editModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; justify-content: center; align-items: center; }
+#editModal.show { display: flex; }
+.modal-content { background: white; border-radius: 12px; padding: 20px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; }
+.modal-content h3 { margin-bottom: 12px; }
+.modal-content .field { margin-bottom: 10px; }
+.modal-content .field label { display: block; font-size: 12px; color: #666; margin-bottom: 2px; }
+.modal-content .field input, .modal-content .field select, .modal-content .field textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+.modal-actions { display: flex; gap: 8px; margin-top: 14px; }
+.btn-cancel { background: #9e9e9e; }
+.btn-confirm { background: #4CAF50; }
 .ai-badge { display: inline-block; background: #e3f2fd; color: #1565c0; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; }
 </style>
 </head>
@@ -455,110 +469,81 @@ input[type="file"] { display: none; }
         Take photo or upload receipt
     </label>
     <input type="file" id="photo" accept="image/*" capture="environment">
-    <div style="margin-top:12px">
-        <button class="camera-btn" onclick="document.getElementById('photo').capture='environment'; document.getElementById('photo').click()">📷 Camera</button>
-        <button class="gallery-btn" onclick="document.getElementById('photo').capture=''; document.getElementById('photo').click()">🖼️ Gallery</button>
+    <div style="margin-top:10px">
+        <button class="btn btn-cam" onclick="document.getElementById('photo').capture='environment'; document.getElementById('photo').click()">📷 Camera</button>
+        <button class="btn btn-gal" onclick="document.getElementById('photo').capture=''; document.getElementById('photo').click()">🖼️ Gallery</button>
     </div>
 </div>
 
-<div id="preview" style="display:none; margin-bottom:16px;">
-    <img id="previewImg" style="width:100%; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-</div>
+<img id="previewImg" style="display:none">
 <div id="loading">
     <div class="spinner"></div>
     <p>AI is reading your receipt...</p>
 </div>
 
 <div id="results">
-    <h3 style="margin-bottom:12px">Extracted Data <span id="aiBadge" class="ai-badge"></span></h3>
+    <div style="margin-bottom:8px; font-weight:600;">Extracted Data <span id="aiBadge" class="ai-badge"></span></div>
     <div class="side-by-side">
         <div class="image-col">
-            <img id="resultImg" style="width:100%; border-radius:8px; border:1px solid #eee;">
+            <div style="font-size:12px; color:#666; margin-bottom:4px;">📷 Original</div>
+            <img id="resultImg">
         </div>
-        <div class="form-col">
-            <div class="verify-header">
-                <span style="font-size:14px; font-weight:600;">Verify extracted data</span>
-                <button class="check-all-btn" onclick="checkAll()">✓ Check all</button>
-            </div>
-            <div class="check-field">
-                <input type="checkbox" id="chk_supplier" onchange="updateSubmit()">
-                <div class="field"><label>Supplier</label><input id="supplier" oninput="document.getElementById('chk_supplier').checked=true;updateSubmit()"></div>
-            </div>
-            <div class="check-field">
-                <input type="checkbox" id="chk_amount" onchange="updateSubmit()">
-                <div class="field"><label>Amount (Rp)</label><input id="amount" type="number" inputmode="numeric" oninput="document.getElementById('chk_amount').checked=true;updateSubmit()"></div>
-            </div>
-            <div class="check-field">
-                <input type="checkbox" id="chk_description" onchange="updateSubmit()">
-                <div class="field"><label>Description</label><textarea id="description" rows="2" oninput="document.getElementById('chk_description').checked=true;updateSubmit()"></textarea></div>
-            </div>
-
-    <div class="type-select">
-        <div class="type-btn" id="btn-expense" onclick="selectType('expense')">💰 Expense</div>
-        <div class="type-btn" id="btn-cogs" onclick="selectType('cogs')">📦 Inventory/COGS</div>
-    </div>
-
-    <div id="expense-fields" style="display:none">
-        <div class="check-field">
-            <input type="checkbox" id="chk_account" onchange="updateSubmit()">
-            <div class="field"><label>Account</label><select id="account_id" onchange="document.getElementById('chk_account').checked=true;updateSubmit()"><option>-- Select --</option></select></div>
+        <div class="text-col">
+            <div style="font-size:12px; color:#666; margin-bottom:4px;">📄 Extracted</div>
+            <div class="extracted-box" id="extractedText"></div>
         </div>
     </div>
-    <div id="cogs-fields" style="display:none">
-        <div class="check-field">
-            <input type="checkbox" id="chk_product" onchange="updateSubmit()">
-            <div class="field"><label>Product</label><select id="product_id" onchange="document.getElementById('chk_product').checked=true;updateSubmit()"><option>-- Select --</option></select></div>
-        </div>
-    </div>
-        </div><!-- end form-col -->
-    </div><!-- end side-by-side -->
 
-    <div id="checkProgress" style="margin-bottom:8px; font-size:12px; color:#666;"></div>
-    <button class="submit-btn" id="submitBtn" onclick="submitEntry()" disabled>✅ Proceed to Odoo 13</button>
+    <div class="action-bar">
+        <span class="progress-text" id="checkProgress"></span>
+        <div style="flex:1"></div>
+        <button class="btn btn-edit" onclick="openEdit()">✏️ Edit</button>
+        <button class="btn btn-save" id="saveBtn" onclick="saveToOdoo()" disabled>✅ Save to Odoo</button>
+    </div>
     <div id="status"></div>
+</div>
 
-    <details style="margin-top:12px">
-        <summary style="font-size:12px;color:#999">Raw AI output</summary>
-        <div class="raw-text" id="rawText"></div>
-    </details>
+<!-- Edit modal -->
+<div id="editModal">
+    <div class="modal-content">
+        <h3>✏️ Edit Extracted Data</h3>
+        <div class="field"><label>Supplier</label><input id="ed_supplier"></div>
+        <div class="field"><label>Date (YYYY-MM-DD)</label><input id="ed_date"></div>
+        <div class="field"><label>Amount (Rp)</label><input id="ed_amount" type="number" inputmode="numeric"></div>
+        <div class="field"><label>Description / Notes</label><textarea id="ed_description" rows="2"></textarea></div>
+        <div class="field">
+            <label>Type</label>
+            <select id="ed_type">
+                <option value="">-- Select --</option>
+                <option value="expense">💰 Expense</option>
+                <option value="cogs">📦 Inventory/COGS</option>
+            </select>
+        </div>
+        <div id="ed_expense_wrap" style="display:none">
+            <div class="field"><label>Account</label><select id="ed_account"><option value="">-- Select --</option></select></div>
+        </div>
+        <div id="ed_cogs_wrap" style="display:none">
+            <div class="field"><label>Product</label><select id="ed_product"><option value="">-- Select --</option></select></div>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-cancel" onclick="closeEdit()">Cancel</button>
+            <button class="btn btn-confirm" onclick="confirmEdit()">✓ Confirm</button>
+        </div>
+    </div>
 </div>
 
 <script>
-let ocrData = {}, currentFilename = '', selectedType = '';
+let ocrData = {}, currentFilename = '', selectedType = '', confirmed = false;
 
-function updateSubmit() {
-    const base = ['chk_supplier', 'chk_amount', 'chk_description'];
-    const typeExtra = selectedType === 'expense' ? ['chk_account'] : selectedType === 'cogs' ? ['chk_product'] : [];
-    const all = [...base, ...typeExtra];
-    const checked = all.filter(id => document.getElementById(id)?.checked).length;
-    const btn = document.getElementById('submitBtn');
-    const prog = document.getElementById('checkProgress');
-    
-    btn.disabled = checked < all.length;
-    btn.textContent = checked >= all.length ? '✅ Proceed to Odoo 13' : `☑️ ${checked}/${all.length} verified — check all to proceed`;
-    prog.textContent = all.length > 0 ? `Verified: ${checked} of ${all.length} fields` : '';
-}
-
-function checkAll() {
-    ['chk_supplier', 'chk_amount', 'chk_description'].forEach(id => {
-        document.getElementById(id).checked = true;
-    });
-    if (selectedType === 'expense') document.getElementById('chk_account').checked = true;
-    if (selectedType === 'cogs') document.getElementById('chk_product').checked = true;
-    updateSubmit();
-}
-
-document.getElementById('photo').addEventListener('change', function(e) {
+document.getElementById('photo').addEventListener('change', function() {
     if (!this.files[0]) return;
+    confirmed = false;
     const fd = new FormData();
     fd.append('photo', this.files[0]);
 
-    // Show preview
+    // Store image for preview
     const reader = new FileReader();
-    reader.onload = e => {
-        document.getElementById('previewImg').src = e.target.result;
-        document.getElementById('preview').style.display = 'block';
-    };
+    reader.onload = e => { document.getElementById('previewImg').src = e.target.result; };
     reader.readAsDataURL(this.files[0]);
 
     document.getElementById('loading').style.display = 'block';
@@ -568,87 +553,176 @@ document.getElementById('photo').addEventListener('change', function(e) {
     .then(r => r.json())
     .then(data => {
         document.getElementById('loading').style.display = 'none';
-        if (data.error) { alert('Error: ' + data.error); return; }
+        if (data.error) { alert('Error: '+data.error); return; }
         showResults(data);
     })
     .catch(err => {
         document.getElementById('loading').style.display = 'none';
-        alert('Upload failed: ' + err.message);
+        alert('Failed: '+err.message);
     });
+});
+
+// Type selector in modal
+document.getElementById('ed_type').addEventListener('change', function() {
+    selectedType = this.value;
+    document.getElementById('ed_expense_wrap').style.display = selectedType==='expense'?'block':'none';
+    document.getElementById('ed_cogs_wrap').style.display = selectedType==='cogs'?'block':'none';
+    updateSaveBtn();
 });
 
 function showResults(data) {
     ocrData = data.ocr;
     currentFilename = data.filename;
 
-    document.getElementById('supplier').value = ocrData.supplier || '';
-    document.getElementById('amount').value = ocrData.total || '';
-    document.getElementById('description').value = ocrData.notes || '';
-    document.getElementById('rawText').textContent = JSON.stringify(ocrData, null, 2);
-    // Copy preview to result image
-    document.getElementById('resultImg').src = document.getElementById('previewImg').src;
+    // Show original image
+    document.getElementById('resultImg').src = document.getElementById('previewImg')?.src || '';
 
-    const badge = document.getElementById('aiBadge');
-    badge.textContent = ocrData.ai_provider || 'AI';
+    // Show extracted data as readable text
+    document.getElementById('extractedText').innerHTML = formatExtracted(ocrData);
+    document.getElementById('aiBadge').textContent = ocrData.ai_provider || 'AI';
 
-    // Accounts
-    const sel = document.getElementById('account_id');
-    sel.innerHTML = '<option value="">-- Select account --</option>';
-    (data.accounts||[]).forEach(a => {
-        sel.innerHTML += `<option value="${a.id}">${a.code} - ${a.name}</option>`;
-    });
+    // Populate edit fields
+    document.getElementById('ed_supplier').value = ocrData.supplier || '';
+    document.getElementById('ed_date').value = ocrData.date || '';
+    document.getElementById('ed_amount').value = ocrData.total || '';
+    document.getElementById('ed_description').value = ocrData.notes || '';
+    selectedType = '';
+    document.getElementById('ed_type').value = '';
+    document.getElementById('ed_expense_wrap').style.display = 'none';
+    document.getElementById('ed_cogs_wrap').style.display = 'none';
 
-    // Products
-    const psel = document.getElementById('product_id');
-    psel.innerHTML = '<option value="">-- Select product --</option>';
-    (data.products||[]).forEach(p => {
-        psel.innerHTML += `<option value="${p.id}">${p.default_code ? p.default_code+' - ' : ''}${p.name}</option>`;
-    });
+    // Populate dropdowns
+    const aSel = document.getElementById('ed_account');
+    aSel.innerHTML = '<option value="">-- Select account --</option>';
+    (data.accounts||[]).forEach(a => aSel.innerHTML += '<option value="'+a.id+'">'+a.code+' - '+a.name+'</option>');
 
+    const pSel = document.getElementById('ed_product');
+    pSel.innerHTML = '<option value="">-- Select product --</option>';
+    (data.products||[]).forEach(p => pSel.innerHTML += '<option value="'+p.id+'">'+(p.default_code?p.default_code+' - ':'')+p.name+'</option>');
+
+    // Show, require edit
+    confirmed = false;
+    updateSaveBtn();
     document.getElementById('results').style.display = 'block';
 }
 
-function selectType(type) {
-    selectedType = type;
-    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('selected'));
-    document.getElementById('btn-'+type).classList.add('selected');
-    document.getElementById('expense-fields').style.display = type==='expense'?'block':'none';
-    document.getElementById('cogs-fields').style.display = type==='cogs'?'block':'none';
-    // Reset type-specific checkboxes
-    if (document.getElementById('chk_account')) document.getElementById('chk_account').checked = false;
-    if (document.getElementById('chk_product')) document.getElementById('chk_product').checked = false;
-    updateSubmit();
+function formatExtracted(d) {
+    let lines = [];
+    const add = (tag, val) => {
+        if (val !== null && val !== undefined && val !== '') {
+            lines.push('<div class="line"><span class="tag">'+tag+':</span> <span class="val">'+val+'</span></div>');
+        }
+    };
+    add('SUPPLIER', d.supplier);
+    add('DATE', d.date);
+    add('TOTAL', d.total ? 'Rp '+Number(d.total).toLocaleString('id-ID') : null);
+    add('SUBTOTAL', d.subtotal ? 'Rp '+Number(d.subtotal).toLocaleString('id-ID') : null);
+    add('TAX', d.tax ? 'Rp '+Number(d.tax).toLocaleString('id-ID') : null);
+    add('RECEIPT #', d.receipt_number);
+    add('PAYMENT', d.payment_method);
+    add('CURRENCY', d.currency);
+    add('CONFIDENCE', d.confidence);
+
+    if (d.items && d.items.length > 0) {
+        lines.push('<div class="line" style="margin-top:6px;"><span class="tag">ITEMS:</span></div>');
+        d.items.forEach((item, i) => {
+            let itemLine = '  ' + (i+1) + '. ' + (item.name||'?');
+            if (item.qty) itemLine += ' x' + item.qty;
+            if (item.price) itemLine += ' @ Rp ' + Number(item.price).toLocaleString('id-ID');
+            if (item.total) itemLine += ' = Rp ' + Number(item.total).toLocaleString('id-ID');
+            lines.push('<div class="line" style="color:#555">'+itemLine+'</div>');
+        });
+    }
+
+    if (d.notes) {
+        lines.push('<div class="line" style="margin-top:6px;"><span class="tag">NOTES:</span> <span class="val">'+d.notes+'</span></div>');
+    }
+
+    // Raw text in collapsible
+    if (d.raw_text) {
+        lines.push('<details style="margin-top:8px"><summary style="font-size:11px;color:#999;cursor:pointer">Raw text</summary><div style="font-size:11px;color:#888;white-space:pre-wrap;max-height:120px;overflow-y:auto">'+d.raw_text+'</div></details>');
+    }
+
+    return lines.join('\n');
 }
 
-function submitEntry() {
-    if (!selectedType) { alert('Select Expense or COGS'); return; }
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true; btn.textContent = '⏳ Saving...';
+function openEdit() {
+    document.getElementById('editModal').classList.add('show');
+}
+
+function closeEdit() {
+    document.getElementById('editModal').classList.remove('show');
+}
+
+function confirmEdit() {
+    confirmed = true;
+    closeEdit();
+
+    // Update the displayed text with edited values
+    const edited = {...ocrData};
+    edited.supplier = document.getElementById('ed_supplier').value;
+    edited.date = document.getElementById('ed_date').value;
+    edited.total = document.getElementById('ed_amount').value;
+    edited.notes = document.getElementById('ed_description').value;
+    document.getElementById('extractedText').innerHTML = formatExtracted(edited);
+
+    updateSaveBtn();
+}
+
+function updateSaveBtn() {
+    const btn = document.getElementById('saveBtn');
+    const prog = document.getElementById('checkProgress');
+    if (confirmed && selectedType) {
+        btn.disabled = false;
+        btn.textContent = '✅ Save to Odoo';
+        prog.textContent = '✓ Verified & categorized';
+    } else {
+        btn.disabled = true;
+        const steps = [];
+        if (!confirmed) steps.push('review data');
+        if (!selectedType) steps.push('select type');
+        btn.textContent = '✅ Save to Odoo';
+        prog.textContent = '⚠️ Please: ' + steps.join(', ');
+    }
+}
+
+function saveToOdoo() {
+    const btn = document.getElementById('saveBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Saving...';
 
     fetch('/submit', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
             type: selectedType,
-            supplier: document.getElementById('supplier').value,
-            amount: document.getElementById('amount').value,
-            description: document.getElementById('description').value,
-            account_id: document.getElementById('account_id').value || null,
-            product_id: document.getElementById('product_id').value || null,
+            supplier: document.getElementById('ed_supplier').value,
+            amount: document.getElementById('ed_amount').value,
+            description: document.getElementById('ed_description').value,
+            account_id: document.getElementById('ed_account').value || null,
+            product_id: document.getElementById('ed_product').value || null,
             filename: currentFilename
         })
     })
     .then(r => r.json())
     .then(data => {
-        btn.disabled = false; btn.textContent = '✅ Proceed to Odoo 13'; updateSubmit();
         const s = document.getElementById('status');
         s.style.display = 'block';
-        if (data.success) { s.className='success'; s.textContent='✅ '+data.message; }
-        else { s.className='error'; s.textContent='❌ '+data.error; }
+        if (data.success) {
+            s.className = 'success';
+            s.textContent = '✅ ' + data.message;
+            btn.textContent = '✅ Saved!';
+        } else {
+            s.className = 'error';
+            s.textContent = '❌ ' + data.error;
+            btn.disabled = false;
+            btn.textContent = '✅ Save to Odoo';
+        }
     })
     .catch(err => {
-        btn.disabled = false; btn.textContent = '✅ Proceed to Odoo 13'; updateSubmit();
-        alert('Submit failed: '+err.message);
+        btn.disabled = false;
+        btn.textContent = '✅ Save to Odoo';
+        alert('Save failed: ' + err.message);
     });
 }
 </script>
