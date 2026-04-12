@@ -1,0 +1,178 @@
+{
+  "name": "Receipt-to-Odoo Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-receipt",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "WhatsApp Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract image URL from WhatsApp message\nconst body = $input.first().json;\nconst message = body.entry?.[0]?.changes?.[0]?.value?.messages?.[0];\n\nif (!message || message.type !== 'image') {\n  return [{ json: { skip: true, text: 'Please send a receipt photo 📸' } }];\n}\n\nconst imageId = message.image.id;\nreturn [{ json: { skip: false, imageId, from: message.from } }];"
+      },
+      "id": "parse-wa-message",
+      "name": "Parse WhatsApp Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.skip }}",
+              "value2": false
+            }
+          ]
+        }
+      },
+      "id": "is-image",
+      "name": "Is Image?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v18.0/{{ $json.imageId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "get-image-url",
+      "name": "Get Image URL",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [910, 250]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:11434/api/generate",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "model", "value": "llava" },
+            { "name": "prompt", "value": "Analyze this receipt and return JSON: {vendor, date, total_amount, currency, line_items[{description, quantity, unit_price, subtotal}], receipt_number, is_readable}. Only JSON, no markdown." },
+            { "name": "stream", "value": "false" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ollama-ocr",
+      "name": "Ollama OCR",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1130, 250]
+    },
+    {
+      "parameters": {
+        "functionCode": "const response = $input.first().json.response;\nlet receipt;\ntry {\n  // Strip markdown if present\n  let cleaned = response.trim();\n  if (cleaned.startsWith('```')) {\n    cleaned = cleaned.split('```')[1].replace(/^json\\n?/, '');\n  }\n  receipt = JSON.parse(cleaned);\n} catch(e) {\n  return [{ json: { error: true, text: 'Could not read receipt. Try a clearer photo 📷' } }];\n}\n\n// Save to temp file for the Python scripts\nconst fs = require('fs');\nfs.writeFileSync('/tmp/receipt_parsed.json', JSON.stringify(receipt, null, 2));\n\nreturn [{ json: { error: false, receipt, from: $('Parse WhatsApp Message').first().json.from } }];"
+      },
+      "id": "parse-ocr",
+      "name": "Parse OCR Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [1350, 250]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v18.0/{{ $env.WA_PHONE_NUMBER_ID }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "messaging_product", "value": "whatsapp" },
+            { "name": "to", "value": "={{ $json.from }}" },
+            { "name": "type", "value": "interactive" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ask-type",
+      "name": "Ask COGS or Expense",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1570, 250]
+    },
+    {
+      "parameters": {
+        "command": "=python3 /opt/receipt-automation/scripts/odoo_pusher.py /tmp/receipt_parsed.json {{ $json.entry_type }}"
+      },
+      "id": "push-odoo",
+      "name": "Push to Odoo",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1790, 250]
+    },
+    {
+      "parameters": {
+        "command": "=python3 /opt/receipt-automation/scripts/csv_logger.py /tmp/receipt_parsed.json {{ $json.entry_type }} {{ $json.entry_id }}"
+      },
+      "id": "log-csv",
+      "name": "Log to CSV",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [2010, 250]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v18.0/{{ $env.WA_PHONE_NUMBER_ID }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "options": {}
+      },
+      "id": "send-confirm",
+      "name": "Send Confirmation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [2230, 250]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v18.0/{{ $env.WA_PHONE_NUMBER_ID }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "options": {}
+      },
+      "id": "send-skip-msg",
+      "name": "Send Skip Message",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [910, 450]
+    }
+  ],
+  "connections": {
+    "WhatsApp Webhook": { "main": [[{ "node": "Parse WhatsApp Message", "type": "main", "index": 0 }]] },
+    "Parse WhatsApp Message": { "main": [[{ "node": "Is Image?", "type": "main", "index": 0 }]] },
+    "Is Image?": {
+      "main": [
+        [{ "node": "Get Image URL", "type": "main", "index": 0 }],
+        [{ "node": "Send Skip Message", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get Image URL": { "main": [[{ "node": "Ollama OCR", "type": "main", "index": 0 }]] },
+    "Ollama OCR": { "main": [[{ "node": "Parse OCR Result", "type": "main", "index": 0 }]] },
+    "Parse OCR Result": { "main": [[{ "node": "Ask COGS or Expense", "type": "main", "index": 0 }]] },
+    "Ask COGS or Expense": { "main": [[{ "node": "Push to Odoo", "type": "main", "index": 0 }]] },
+    "Push to Odoo": { "main": [[{ "node": "Log to CSV", "type": "main", "index": 0 }]] },
+    "Log to CSV": { "main": [[{ "node": "Send Confirmation", "type": "main", "index": 0 }]] }
+  },
+  "settings": {}
+}
