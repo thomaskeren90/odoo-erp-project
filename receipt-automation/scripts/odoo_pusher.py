@@ -17,12 +17,12 @@ ODOO_PASS = "admin123"
 # === Chart of Accounts (adjust to match your COA) ===
 ACCOUNTS = {
     # Assets
-    "inventory":    {"code": "101000", "name": "Inventory"},
-    "bank":         {"code": "101200", "name": "Bank"},
+    "inventory":    {"code": "112001", "name": "Persediaan Barang"},
+    "bank":         {"code": "111001", "name": "BCA 1 Prvt"},
     # Liabilities
-    "ap_trade":     {"code": "211100", "name": "Account Payable"},
+    "ap_trade":     {"code": "21100010", "name": "Hutang Usaha"},
     # Expenses
-    "cogs":         {"code": "501000", "name": "Cost of Goods Sold"},
+    "cogs":         {"code": "50100010", "name": "Harga Pokok Penjualan (COGS)"},
     "opex":         {"code": "611000", "name": "Operating Expenses"},
     "office":       {"code": "611100", "name": "Office Supplies"},
     "transport":    {"code": "611200", "name": "Transportation"},

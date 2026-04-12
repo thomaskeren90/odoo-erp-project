@@ -15,9 +15,9 @@ ODOO_USER = "tokomakmur"
 ODOO_PASS = "admin123"
 
 # === Account codes — adjust to match your Odoo COA ===
-ACCT_INVENTORY = "101000"
-ACCT_AP = "211100"
-ACCT_COGS = "501000"
+ACCT_INVENTORY = "112001"
+ACCT_AP = "21100010"
+ACCT_COGS = "50100010"
 
 
 def connect():
