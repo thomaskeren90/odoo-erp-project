@@ -105,7 +105,7 @@ def import_csv(uid, models, csv_path):
             print(f"⏭️  Skipping {inv_no} — already imported (move ID: {existing[0]})")
             continue
 
-        # Journal entry: DR Inventory + DR COGS / CR AP
+        # Journal entry: DR Inventory / CR AP (purchase only — COGS at sale time)
         journal_entry = {
             "ref": inv_ref,
             "date": date,
@@ -119,16 +119,10 @@ def import_csv(uid, models, csv_path):
                     "credit": 0.0,
                 }),
                 (0, 0, {
-                    "name": f"COGS — {supplier} ({inv_no})",
-                    "account_id": cogs_acct,
-                    "debit": total,
-                    "credit": 0.0,
-                }),
-                (0, 0, {
                     "name": f"AP — {supplier} ({inv_no})",
                     "account_id": ap_acct,
                     "debit": 0.0,
-                    "credit": total * 2,  # balances both debits
+                    "credit": total,
                 }),
             ],
         }
