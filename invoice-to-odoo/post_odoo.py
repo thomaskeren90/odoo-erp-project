@@ -97,18 +97,15 @@ class OdooPoster:
         # Build invoice line items
         invoice_lines = []
         for item in data.get("line_items", []):
-            line_vals = [
-                0, 0, {
-                    "name": item.get("description", "Item"),
-                    "quantity": item.get("quantity", 1.0),
-                    "price_unit": item.get("unit_price", 0.0),
-                    # Tax ID from env or skip
-                ]
-            ]
+            line_dict = {
+                "name": item.get("description", "Item"),
+                "quantity": item.get("quantity", 1.0),
+                "price_unit": item.get("unit_price", 0.0),
+            }
             tax_id = self.default_tax_id
             if tax_id:
-                line_vals[2]["invoice_line_tax_ids"] = [(6, 0, [int(tax_id)])]
-            invoice_lines.append(line_vals)
+                line_dict["invoice_line_tax_ids"] = [(6, 0, [int(tax_id)])]
+            invoice_lines.append((0, 0, line_dict))
 
         # If no line items, create one with total
         if not invoice_lines and data.get("total_amount"):
