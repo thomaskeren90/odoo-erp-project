@@ -1,0 +1,13 @@
+ODOO_URL = "http://localhost:8069"
+ODOO_DB = "tokoodoo13"
+ODOO_USERNAME = "admin"
+ODOO_PASSWORD = "admin123"
+OLLAMA_URL = "http://localhost:11434"
+OLLAMA_MODEL = "gemma3:1b"
+GEMINI_API_KEY = "AIzaSyA8UTYee3wmM8Ry1w9_bRzEiw3dimrZ2I0"
+OPENAI_API_KEY = ""
+OPENAI_MODEL = "gpt-4o-mini"
+AI_PROVIDER = "gemini"
+UPLOAD_FOLDER = "/tmp/receipts"
+HOST = "0.0.0.0"
+PORT = 5000
