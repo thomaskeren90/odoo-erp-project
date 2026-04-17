@@ -103,8 +103,8 @@ class OdooPoster:
                     "quantity": item.get("quantity", 1.0),
                     "price_unit": item.get("unit_price", 0.0),
                     # Tax ID from env or skip
-                }
-            }
+                ]
+            ]
             tax_id = self.default_tax_id
             if tax_id:
                 line_vals[2]["invoice_line_tax_ids"] = [(6, 0, [int(tax_id)])]
