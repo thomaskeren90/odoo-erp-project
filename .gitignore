@@ -1,0 +1,25 @@
+# ─── Git Ignore ────────────────────────────────────────────────────
+
+# Credentials — NEVER commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Processed invoices (local only)
+processed/
+failed/
