@@ -1,7 +1,25 @@
-# Secrets - don't commit config.py (has passwords)
-config.py
+# ─── Git Ignore ────────────────────────────────────────────────────
+
+# Credentials — NEVER commit
+.env
+
+# Python
 __pycache__/
 *.pyc
-.env
-*.tar.gz
-/tmp/
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Processed invoices (local only)
+processed/
+failed/
