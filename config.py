@@ -1,6 +1,6 @@
 ODOO_URL = "http://localhost:8069"
 ODOO_DB = "tokoodoo13"
-ODOO_USERNAME = "admin"
+ODOO_USERNAME = "tokomakmur"
 ODOO_PASSWORD = "admin123"
 OLLAMA_URL = "http://localhost:11434"
 OLLAMA_MODEL = "gemma3:1b"
