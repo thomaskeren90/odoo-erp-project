@@ -10,6 +10,6 @@
         "data/chart_of_accounts.xml",
         "data/journals.xml"
     ],
-    "installable": true,
-    "auto_install": false
+    "installable": True,
+    "auto_install": False
 }

@@ -1,3 +1,4 @@
+version: "3.8"
 services:
   odoo13:
     image: odoo:13.0
@@ -9,12 +10,14 @@ services:
     volumes:
       - odoo13-data:/var/lib/odoo
       - ./addons:/mnt/extra-addons
+      - ./config/odoo.conf:/etc/odoo/odoo.conf
     environment:
       - HOST=db
       - PORT=5432
       - USER=odoo13
       - PASSWORD=odoo13
     restart: unless-stopped
+
   db:
     image: postgres:13
     container_name: odoo13-db
@@ -25,6 +28,39 @@ services:
     volumes:
       - odoo13-db:/var/lib/postgresql/data
     restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama_brain
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n_worker
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+
+  openclaw:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: openclaw_agent
+    ports:
+      - "18789:18789"
+    volumes:
+      - /home/tomhack/openclaw-docker/config:/home/node/.openclaw
+      - /home/tomhack/openclaw-docker/workspace:/home/node/workspace
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
 volumes:
   odoo13-data:
   odoo13-db:
+  ollama_data:
+  n8n_data:
