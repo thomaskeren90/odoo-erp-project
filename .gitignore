@@ -23,3 +23,5 @@ Thumbs.db
 # Processed invoices (local only)
 processed/
 failed/
+*.CSV
+*.csv
